@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SyncListen - Room</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="stylesheet" href="styles/room-style.css"/>
+</head>
+<body>
+    <main>
+        <header class="header">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" placeholder="What do you want to play?" autocomplete="off" />
+            </div>
+
+            <button class="disconnect-btn" id="disconnectBtn">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Disconnect</span>
+            </button>
+        </header>
+
+        <aside class="members-list">
+            <h3>Members</h3>
+            <ul class="members" id="membersList">
+                <!-- Dynamically populated -->
+            </ul>
+        </aside>
+
+        <section class="songs-card">
+            <h3 id="resultsTitle">Popular Songs</h3>
+            <div class="song-grid" id="songGrid">
+                <p style="text-align: center; color: #888; padding: 20px;">🎵 Search for songs to add to queue</p>
+            </div>
+        </section>
+
+        <aside class="songs-queue">
+            <h3>Queue</h3>
+            
+            <div class="now-playing" id="nowPlaying">
+                <img id="nowPlayingImg" src="https://picsum.photos/seed/playing/400" alt="Now playing" />
+                <div class="now-playing-info">
+                    <div class="now-playing-title" id="nowPlayingTitle">No song playing</div>
+                    <div class="now-playing-artist" id="nowPlayingArtist">Add songs to queue</div>
+                </div>
+            </div>
+
+            <div class="queue-label">Up Next</div>
+            <ul class="queue" id="queueList">
+                <li class="queue-item" style="text-align: center; color: #888;">Queue is empty</li>
+            </ul>
+        </aside>
+
+        <footer class="player-bar">
+            <div class="track-info">
+                <img id="playerImage" src="https://picsum.photos/seed/playing/400" alt="Track cover" />
+                <div class="track-details">
+                    <div class="track-title" id="playerTitle">No song playing</div>
+                    <div class="track-artist" id="playerArtist">Add songs to start</div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn disabled" id="prevBtn" title="Previous">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="control-btn play disabled" id="playBtn" title="Play/Pause">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="control-btn disabled" id="nextBtn" title="Next">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="time-info">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalTime">0:00</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Hidden YouTube Player (audio only) -->
+    <div id="yt-player" style="display:none;"></div>
+
+    <!-- CRITICAL: Load YouTube API first, then your module -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script type="module" src="scripts/room.js"></script>
+</body>
+</html>

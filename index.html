@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SyncListen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <section>
+        <div class="logo">
+          <img src="images/logo.png" alt="Spotify Jam logo" />
+        </div>
+
+        <div class="hero">
+          <div class="hero-left">
+            <div class="top">
+              <h1>
+                Music was never meant to be a<br />
+                solo experience, so let's build the vibe together.
+              </h1>
+              <p>Real-time collaborative listening for you and friends</p>
+            </div>
+
+            <div class="bottom">
+              <button class="btn-primary">Create a room</button>
+              <button class="btn-secondary">Join a room</button>
+            </div>
+          </div>
+
+          <div class="hero-right">
+            <img src="images/side-image.png" alt="Spotify Jam app preview" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- MODAL -->
+    <div class="overlay hidden"></div>
+
+    <div class="join-modal hidden">
+      <button class="close">×</button>
+      <h2>Join Room</h2>
+      <p>Enter room code below</p>
+      <input type="text" placeholder="Room code" maxlength="8" />
+      <button class="submit">Join</button>
+    </div>
+
+    <script src="scripts/script.js" type="module"></script>
+   
+  </body>
+</html>
