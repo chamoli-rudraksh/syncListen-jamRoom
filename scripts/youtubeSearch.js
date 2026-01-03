@@ -1,4 +1,4 @@
-const YOUTUBE_API_KEY = "AIzaSyA_0Zh1mAph2lPYNQCiKkL3oy4boD_IQYQ";
+const YOUTUBE_API_KEY = "YOUR_YOUTUBE_API_KEY";
 
 /* ---------- CLEAN TITLE ---------- */
 function cleanTitle(title) {
@@ -90,3 +90,4 @@ export async function searchYouTube(query) {
     .filter(Boolean)
     .sort((a, b) => b.score - a.score);
 }
+
